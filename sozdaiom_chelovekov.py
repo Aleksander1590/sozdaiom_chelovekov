@@ -70,12 +70,10 @@ context = {
 }
 
 
-files_names = ["file_1.svg", "file_2.svg", "file_3.svg", "file_4.svg", "file_5.svg", "file_6.svg", "file_7.svg", "file_8.svg", "file_9.svg", "file_10.svg"] 
-
-for file_name in range(10):
-    file_operations.render_template("template.svg", "{name}".format(name=files_names[file_name]), context)
-
+files_names = ["file_1.svg", "file_2.svg", "file_3.svg", "file_4.svg", "file_5.svg", "file_6.svg", "file_7.svg", "file_8.svg", "file_9.svg", "file_10.svg"]
+for file_name in files_names:
+    file_name = file_name
 
 
-
-
+for peremennaia in range(10):
+    file_operations.render_template("template.svg", "{name}".format(name=file_name), context)
