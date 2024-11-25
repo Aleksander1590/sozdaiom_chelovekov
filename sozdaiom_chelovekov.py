@@ -69,10 +69,8 @@ context = {
 
 }
 
+files_names = ["file_1", "file_2", "file_3", "file_4", "file_5", "file_6", "file_7", "file_8", "file_9", "file_10"]
 
-files_names = ["file_1.svg", "file_2.svg", "file_3.svg", "file_4.svg", "file_5.svg", "file_6.svg", "file_7.svg", "file_8.svg", "file_9.svg", "file_10.svg"]
-for name in files_names:
-    print(name)
 
 for i in range(10):
-    file_operations.render_template("template.svg", f"{name}", context)
+    file_operations.render_template("template.svg", f'{files_names}.svg', context)
