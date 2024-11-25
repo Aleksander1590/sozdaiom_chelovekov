@@ -73,4 +73,4 @@ files_names = ["file_1", "file_2", "file_3", "file_4", "file_5", "file_6", "file
 
 
 for i in range(10):
-    file_operations.render_template("template.svg", f'{files_names}.svg', context)
+    file_operations.render_template("template.svg", f'{files_names[i]}.svg', context)
