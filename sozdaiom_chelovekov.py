@@ -48,12 +48,23 @@ letters = {
     ' ': ' '
 }
 
+
+
+
+
 for key, value in letters.items():
     skill_1 = skill_1.replace(key, value)
     skill_2 = skill_2.replace(key, value)
     skill_3 = skill_3.replace(key, value)
 
+runic_skills = []  
+runic_skills.append(skill_1)
+runic_skills.append(skill_2)
+runic_skills.append(skill_3)
+print(runic_skills)
+
 context = {
+
 "first_name": first_name,
 "last_name": last_name,
 "town": town,
@@ -69,8 +80,7 @@ context = {
 
 }
 
-files_names = ["file_1", "file_2", "file_3", "file_4", "file_5", "file_6", "file_7", "file_8", "file_9", "file_10"]
-
+files_names = ["file_1.svg", "file_2.svg", "file_3.svg", "file_4.svg", "file_5.svg", "file_6.svg", "file_7.svg", "file_8.svg", "file_9.svg", "file_10.svg"]
 
 for i in range(10):
-    file_operations.render_template("template.svg", f'{files_names[i]}.svg', context)
+    file_operations.render_template("template.svg", f'{files_names[i]}', context)
