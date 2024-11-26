@@ -2,11 +2,9 @@ import file_operations
 from faker import Faker
 import random
 import os
-from letters import letters
+from runic_alphabet import runic_alphabet
 
-os.makedirs("files", exist_ok=True)
-
-for i in range(10):
+for i in range(1, 11):
 
     fake = Faker("ru_RU")
     first_name = fake.first_name()
@@ -19,21 +17,26 @@ for i in range(10):
     intelligence = random.randint(3, 18)
     luck = random.randint(3, 18)
 
-    population = ["Стремительный прыжок", "Электрический выстрел", "Ледяной удар", "Стремительный удар", "Кислотный взгляд", "Тайный побег", "Ледяной выстрел", "Огненный заряд"]
+    skills = [
+    "Стремительный прыжок", 
+    "Электрический выстрел", 
+    "Ледяной удар", 
+    "Стремительный удар", 
+    "Кислотный взгляд", 
+    "Тайный побег", 
+    "Ледяной выстрел", 
+    "Огненный заряд"
+    ]
 
-    skills = random.sample(population, 3)
-    skill_1 = skills[0]
-    skill_2 = skills[1]
-    skill_3 = skills[2]
+    random_skills = random.sample(skills, 3)
+    skill_1 = random_skills[0]
+    skill_2 = random_skills[1]
+    skill_3 = random_skills[2]
 
-    for key, value in letters.items():
+    for key, value in runic_alphabet.items():
         skill_1 = skill_1.replace(key, value)
         skill_2 = skill_2.replace(key, value)
         skill_3 = skill_3.replace(key, value)
-
-
-    files_names = ["file_1.svg", "file_2.svg", "file_3.svg", "file_4.svg", "file_5.svg", "file_6.svg", "file_7.svg", "file_8.svg", "file_9.svg", "file_10.svg"]   
-
 
     context = {
         "first_name": first_name,
@@ -50,4 +53,5 @@ for i in range(10):
         "skill_3": skill_3
     }
 
-    file_operations.render_template("template.svg", f'files/{files_names[i]}', context)
+    os.makedirs("files", exist_ok=True)
+    file_operations.render_template("template.svg", f'files/card-{i}.svg', context)
