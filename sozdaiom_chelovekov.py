@@ -28,10 +28,10 @@ for i in range(1, 11):
     "Огненный заряд"
     ]
 
-    random_skills = random.sample(skills, 3)
-    skill_1 = random_skills[0]
-    skill_2 = random_skills[1]
-    skill_3 = random_skills[2]
+    card_skills = random.sample(skills, 3)
+    skill_1 = card_skills[0]
+    skill_2 = card_skills[1]
+    skill_3 = card_skills[2]
 
     for key, value in runic_alphabet.items():
         skill_1 = skill_1.replace(key, value)
