@@ -1,4 +1,4 @@
-import file_operations
+import file_operations 
 from faker import Faker
 import random
 import os
@@ -18,14 +18,14 @@ for i in range(1, 11):
     luck = random.randint(3, 18)
 
     skills = [
-    "Стремительный прыжок", 
-    "Электрический выстрел", 
-    "Ледяной удар", 
-    "Стремительный удар", 
-    "Кислотный взгляд", 
-    "Тайный побег", 
-    "Ледяной выстрел", 
-    "Огненный заряд"
+        "Стремительный прыжок", 
+        "Электрический выстрел", 
+        "Ледяной удар", 
+        "Стремительный удар", 
+        "Кислотный взгляд", 
+        "Тайный побег", 
+        "Ледяной выстрел", 
+        "Огненный заряд"
     ]
 
     card_skills = random.sample(skills, 3)
@@ -53,5 +53,6 @@ for i in range(1, 11):
         "skill_3": skill_3
     }
 
-    os.makedirs("files", exist_ok=True)
-    file_operations.render_template("template.svg", f'files/card-{i}.svg', context)
+    if __name__ == '__main__':
+        os.makedirs("files", exist_ok=True)
+        file_operations.render_template("template.svg", f'files/card-{i}.svg', context)
