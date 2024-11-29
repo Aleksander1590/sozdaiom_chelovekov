@@ -4,29 +4,29 @@ import random
 import os
 from runic_alphabet import runic_alphabet
 
+fake = Faker("ru_RU")
+first_name = fake.first_name()
+last_name = fake.last_name()
+town = fake.city()
+job = fake.job()
+strength = random.randint(3, 18)
+agility = random.randint(3, 18)
+endurance = random.randint(3, 18)
+intelligence = random.randint(3, 18)
+luck = random.randint(3, 18)
+
+skills = [
+    "Стремительный прыжок", 
+    "Электрический выстрел", 
+    "Ледяной удар", 
+    "Стремительный удар", 
+    "Кислотный взгляд", 
+    "Тайный побег", 
+    "Ледяной выстрел", 
+    "Огненный заряд"
+]
+
 for i in range(1, 11):
-
-    fake = Faker("ru_RU")
-    first_name = fake.first_name()
-    last_name = fake.last_name()
-    town = fake.city()
-    job = fake.job()
-    strength = random.randint(3, 18)
-    agility = random.randint(3, 18)
-    endurance = random.randint(3, 18)
-    intelligence = random.randint(3, 18)
-    luck = random.randint(3, 18)
-
-    skills = [
-        "Стремительный прыжок", 
-        "Электрический выстрел", 
-        "Ледяной удар", 
-        "Стремительный удар", 
-        "Кислотный взгляд", 
-        "Тайный побег", 
-        "Ледяной выстрел", 
-        "Огненный заряд"
-    ]
 
     card_skills = random.sample(skills, 3)
     skill_1 = card_skills[0]
