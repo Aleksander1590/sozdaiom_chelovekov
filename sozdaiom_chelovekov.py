@@ -28,7 +28,6 @@ def main():
     ]
 
     for i in range(1, 11):
-
         card_skills = random.sample(skills, 3)
         skill_1 = card_skills[0]
         skill_2 = card_skills[1]
@@ -59,4 +58,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
