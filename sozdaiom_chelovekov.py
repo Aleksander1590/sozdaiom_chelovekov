@@ -53,6 +53,9 @@ for i in range(1, 11):
         "skill_3": skill_3
     }
 
-    if __name__ == '__main__':
+    def main():    
         os.makedirs("files", exist_ok=True)
         file_operations.render_template("template.svg", f'files/card-{i}.svg', context)
+
+    if __name__ == '__main__':
+        main()
